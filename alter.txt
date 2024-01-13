@@ -1,0 +1,13 @@
+ALTER TABLE phone_numbers ADD CONSTRAINT fk_phone_numbers_persons FOREIGN KEY (person_id) REFERENCES persons(person_id);
+ALTER TABLE phone_numbers ADD CONSTRAINT fk_phone_numbers_evidence FOREIGN KEY (evidence_id) REFERENCES  evidence(evidence_id);
+ALTER TABLE address ADD CONSTRAINT fk_address_persons FOREIGN KEY (person_id) REFERENCES persons(person_id);
+ALTER TABLE address ADD CONSTRAINT fk_address_evidence FOREIGN KEY (evidence_id) REFERENCES evidence(evidence_id);
+ALTER TABLE email_address ADD CONSTRAINT fk_email_address_persons FOREIGN KEY (person_id) REFERENCES persons(person_id);
+ALTER TABLE email_address ADD CONSTRAINT fk_email_address_evidence FOREIGN KEY (evidence_id) REFERENCES evidence(evidence_id);
+ALTER TABLE credentials ADD CONSTRAINT fk_credentials_evidence FOREIGN KEY (evidence_id) REFERENCES evidence(evidence_id);
+ALTER TABLE accounts ADD CONSTRAINT fk_accounts_persons FOREIGN KEY (person_id) REFERENCES persons(person_id);
+ALTER TABLE accounts ADD CONSTRAINT fk_accounts_credentials FOREIGN KEY (credential_id) REFERENCES credentials(cred_id);
+ALTER TABLE accounts ADD CONSTRAINT fk_accounts_evidence FOREIGN KEY (evidence_id) REFERENCES evidence(evidence_id);
+ALTER TABLE notes ADD CONSTRAINT fk_notes_persons FOREIGN KEY (person_id) REFERENCES persons(person_id);
+ALTER TABLE notes ADD CONSTRAINT fk_ntoes_evidence FOREIGN KEY (evidence_id) REFERENCES evidence(evidence_id);
+ALTER TABLE evidence ADD CONSTRAINT fk_evidence_persons FOREIGN KEY (person_id) REFERENCES persons(person_id);
